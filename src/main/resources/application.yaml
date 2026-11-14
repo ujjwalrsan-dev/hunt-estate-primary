@@ -1,3 +1,19 @@
 spring:
   application:
     name: hunt-estate-primary
+    # H2 database configuration
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: dev
+    password: temp2026
+  # jpa h2 config
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    # run data.sql AFTER Hibernate creates the tables
+    defer-datasource-initialization: true
+    show-sql: true
+  h2:
+    console:
+      enabled: true
